@@ -8,6 +8,6 @@ class Classroom
 
   def add_student(student)
     student << student
-    student. classroom = self
+    student.classroom = self
   end
 end
