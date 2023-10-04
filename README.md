@@ -61,7 +61,7 @@ Clone this repository to your desired folder:
 
 ### Install
 
-Install this project with:
+Install this project with: You can install this project with bundle install
 
 <!--
 Example command:
@@ -74,7 +74,7 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, execute the following command: run this project by typing ruby follow by the file name.
 
 <!--
 Example command:
@@ -84,9 +84,6 @@ Example command:
 ```
 --->
 
-### Run tests
-
-To run tests, run the following command:
 
 <!--
 Example command:
