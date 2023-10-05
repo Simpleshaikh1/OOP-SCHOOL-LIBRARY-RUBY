@@ -18,9 +18,6 @@ class Main
     Execute.new(user_choice).execute
   end
 
-  # rubocop:disable Metrics/MethodLength
-  # rubocop:disable Metrics/AbcSize
-  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def load_data
     if File.exist?('books.json')
       books_data = File.read('books.json')
