@@ -77,10 +77,6 @@ class Main
       puts 'Rental file does not exist.'
     end
   end
-
-  # rubocop:enable Metrics/MethodLength
-  # rubocop:enable Metrics/AbcSize
-  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 end
 
 puts 'Welcome to School Library App!'
