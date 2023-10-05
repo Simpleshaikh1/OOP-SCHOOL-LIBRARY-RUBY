@@ -27,10 +27,10 @@ class Main
   private
 
   def load_json_file(filename)
-    if File.exist?(filename)
-      data = File.read(filename)
-      JSON.parse(data) unless data.empty?
-    end
+    return unless File.exist?(filename)
+  
+    data = File.read(filename)
+    JSON.parse(data) unless data.empty?
   end
 
   def display_books
