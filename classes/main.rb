@@ -28,7 +28,7 @@ class Main
 
   def load_json_file(filename)
     return unless File.exist?(filename)
-  
+
     data = File.read(filename)
     JSON.parse(data) unless data.empty?
   end
