@@ -19,60 +19,67 @@ class Main
   end
 
   def load_data
-    if File.exist?('books.json')
-      books_data = File.read('books.json')
-      if books_data.empty?
-        puts 'No books available.'
-      else
-        books = JSON.parse(books_data)
-        puts 'Books:'
-        books.each do |book|
-          puts "Title: #{book['title']} Author: #{book['author']}"
-        end
-      end
-    else
-      puts 'Books file does not exist.'
-    end
+    display_books
+    display_people
+    display_rentals
+  end
 
-    if File.exist?('people.json')
-      people_data = File.read('people.json')
-      if people_data.empty?
-        puts 'No person available'
-      else
-        people = JSON.parse(people_data)
-        puts 'People:'
-        people.each do |person|
-          puts "ID: #{person['id']} Age: #{person['age']} Name: #{person['name']} Rental: #{person['rental']}"
-        end
-      end
-    else
-      puts 'Person file does not exist.'
-    end
+  private
 
-    if File.exist?('rentals.json')
-      rental_data = File.read('rentals.json')
-      if rental_data.empty?
-        puts 'No Rentals available'
-      else
-        rentals = JSON.parse(rental_data)
-        puts 'Rentals:'
-        rentals.each do |rental|
-          date = rental['date']
-          person = rental['person']
-          book = rental['book']
-
-          puts "Date: #{date}"
-          puts "Person ID: #{person['id']}"
-          puts "Person Age: #{person['age']}"
-          puts "Person Name: #{person['name']}"
-          puts "Book Author: #{book['author']}"
-          puts "Book Title: #{book['title']}"
-          puts '----------'
-        end
-      end
-    else
-      puts 'Rental file does not exist.'
+  def load_json_file(filename)
+    if File.exist?(filename)
+      data = File.read(filename)
+      JSON.parse(data) unless data.empty?
     end
+  end
+
+  def display_books
+    books = load_json_file('books.json')
+    if books
+      puts 'Books:'
+      books.each { |book| display_book(book) }
+    else
+      puts 'No books available.'
+    end
+  end
+
+  def display_book(book)
+    puts "Title: #{book['title']} Author: #{book['author']}"
+  end
+
+  def display_people
+    people = load_json_file('people.json')
+    if people
+      puts 'People:'
+      people.each { |person| display_person(person) }
+    else
+      puts 'No people available.'
+    end
+  end
+
+  def display_person(person)
+    puts "ID: #{person['id']} Age: #{person['age']} Name: #{person['name']} Rental: #{person['rental']}"
+  end
+
+  def display_rentals
+    rentals = load_json_file('rentals.json')
+    if rentals
+      puts 'Rentals:'
+      rentals.each { |rental| display_rental(rental) }
+    else
+      puts 'No rentals available.'
+    end
+  end
+
+  def display_rental(rental)
+    date = rental['date']
+    person = rental['person']
+    book = rental['book']
+
+    puts "Date: #{date}"
+    puts "Person ID: #{person['id']} Age: #{person['age']} Name: #{person['name']}"
+    puts "Book Title: #{book['title']} Author: #{book['author']}"
+    puts '----------'
   end
 end
 
