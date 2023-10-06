@@ -33,15 +33,15 @@ class Main
     JSON.parse(data) unless data.empty?
   end
 
-  def display_books
-    books = load_json_file('books.json')
-    if books
-      puts 'Books:'
-      books.each { |book| display_book(book) }
-    else
-      puts 'No books available.'
-    end
-  end
+  # def display_books
+  #   books = load_json_file('books.json')
+  #   if books
+  #     puts 'Books:'
+  #     books.each { |book| display_book(book) }
+  #   else
+  #     puts 'No books available.'
+  #   end
+  # end
 
   def display_book(book)
     puts "Title: #{book['title']} Author: #{book['author']}"
