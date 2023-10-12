@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Rental do
   before :each do
-    @person = Person.new(21, 'htet')
+    @person = Person.new(21, 'htet', nil)
     @book = Book.new('hello world', 'yan')
   end
 

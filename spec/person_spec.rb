@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Person do
   before :each do
-    @person = Person.new(21, 'htetwaiyan')
+    @person = Person.new(21, 'htetwaiyan', nil)
   end
 
   describe '#new' do

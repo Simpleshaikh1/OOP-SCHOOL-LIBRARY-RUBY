@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Teacher do
   before :each do
-    @teacher = Teacher.new('math', 40, 'John', parent_permission: true)
+    @teacher = Teacher.new(40, 'John')
   end
 
   describe '#new' do
