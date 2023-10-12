@@ -7,9 +7,9 @@ class Person < Nameable
   attr_accessor :name, :age, :rental, :parent_permission
   attr_reader :id
 
-  def initialize(id, age = 18, name = 'Unknown', parent_permission: true)
+  def initialize(age, name, rental, parent_permission: true)
     super()
-    @id = id
+    @id = generate_id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -31,10 +31,14 @@ class Person < Nameable
   private
 
   def of_age?
-    @age >= 18
+    @age && @age >= 18
   end
 
   def add_rental(date, book)
     Rental.new(date, self, book)
+  end
+
+  def generate_id
+    rand(1..1000)
   end
 end

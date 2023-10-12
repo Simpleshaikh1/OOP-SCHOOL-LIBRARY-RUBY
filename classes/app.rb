@@ -40,10 +40,11 @@ class App
     name = gets.chomp.to_s
     print 'Has parent permission ? [Y/N]: '
     choice = gets.chomp
+    id= gets.chomp.to_i
     if %w[Y y].include?(choice)
-      Student.new(age, name, parent_permission: true)
+      Student.new(id, age, name, parent_permission: true)
     elsif %w[N n].include?(choice)
-      Student.new(age, name, parent_permission: false)
+      Student.new(id, age, name, parent_permission: false)
     end
   end
 
@@ -54,7 +55,7 @@ class App
     teacher_name = gets.chomp.to_s
     print 'Specialization: '
     specialization = gets.chomp.to_s
-    Teacher.new(specialization, teacher_age, teacher_name)
+    Teacher.new(teacher_age, teacher_name, specialization)
   end
 
   def self.create_book
