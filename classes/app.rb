@@ -50,12 +50,14 @@ class App
 
   def self.create_teacher
     print 'Age: '
-    teacher_age = gets.chomp.to_i
+    age = gets.chomp.to_i
     print 'Name: '
-    teacher_name = gets.chomp.to_s
+    name = gets.chomp.to_s
+    print 'Has parent permission ? [Y/N]: '
+    choice = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp.to_s
-    Teacher.new(teacher_age, teacher_name, specialization)
+    Teacher.new(specialization, age, name, parent_permission: true)
   end
 
   def self.create_book
