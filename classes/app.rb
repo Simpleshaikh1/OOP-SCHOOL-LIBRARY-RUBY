@@ -40,7 +40,7 @@ class App
     name = gets.chomp.to_s
     print 'Has parent permission ? [Y/N]: '
     choice = gets.chomp
-    id= gets.chomp.to_i
+    id = gets.chomp.to_i
     if %w[Y y].include?(choice)
       Student.new(id, age, name, parent_permission: true)
     elsif %w[N n].include?(choice)
