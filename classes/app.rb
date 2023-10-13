@@ -54,7 +54,7 @@ class App
     print 'Name: '
     name = gets.chomp.to_s
     print 'Has parent permission ? [Y/N]: '
-    choice = gets.chomp
+    gets.chomp
     print 'Specialization: '
     specialization = gets.chomp.to_s
     Teacher.new(specialization, age, name, parent_permission: true)
