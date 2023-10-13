@@ -2,9 +2,8 @@ require_relative 'spec_helper'
 
 describe Teacher do
   before :each do
-    @teacher = Teacher.new(40, 'John')
+    @teacher = Teacher.new('Math', 40, 'John')
   end
-
   describe '#new' do
     context 'when creating a new teacher object ' do
       it 'should return a teacher object' do
